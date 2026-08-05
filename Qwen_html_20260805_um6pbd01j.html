@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XM Affiliate Program - Unlimited Commission</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        xmPrimary: '#00a651',   // Hijau tombol/aksen
+                        xmSecondary: '#006837',
+                        xmBlack: '#000000',     // HITAM untuk hero
+                        xmNavy: '#0a1931',      // DARK NAVY untuk section bawah
+                        xmDark: '#1a1a2e',
+                        xmAccent: '#ffd700'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        /* Dropdown Animation */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        /* Gradient untuk tombol */
+        .gradient-bg {
+            background: linear-gradient(135deg, #00a651 0%, #006837 100%);
+        }
+        
+        /* Card Hover Effect */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 166, 81, 0.15);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased">
+
+    <!-- NAVBAR WITH DROPDOWN -->
+    <nav class="fixed w-full z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- LOGO -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- ========================================
+                         GANTI GAMBAR LOGO DI SINI
+                         Upload ke: /images/logo.png
+                         ======================================== -->
+                    <img src="./images/logo.png" alt="XM Partner" class="h-12 w-auto">
+                </div>
+
+                <!-- DESKTOP MENU -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#" class="text-gray-700 hover:text-xmPrimary font-semibold transition">Beranda</a>
+                    
+                    <!-- DROPDOWN -->
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 hover:text-xmPrimary font-semibold focus:outline-none transition">
+                            Program
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        
+                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
+                            <a href="#" class="block px-5 py-4 text-sm text-gray-700 hover:bg-green-50 hover:text-xmPrimary font-medium">Affiliate Program</a>
+                            <a href="#" class="block px-5 py-4 text-sm text-gray-700 hover:bg-green-50 hover:text-xmPrimary font-medium">Introducing Broker</a>
+                            <a href="#" class="block px-5 py-4 text-sm text-gray-700 hover:bg-green-50 hover:text-xmPrimary font-medium">Partners Rewards</a>
+                            <div class="border-t border-gray-100"></div>
+                            <a href="#" class="block px-5 py-4 text-sm text-xmPrimary font-bold hover:bg-green-50">Lihat Semua Program</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="text-gray-700 hover:text-xmPrimary font-semibold transition">Promosi</a>
+                    <a href="#" class="text-gray-700 hover:text-xmPrimary font-semibold transition">Support</a>
+                </div>
+
+                <!-- CTA BUTTONS -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-xmPrimary font-bold hover:underline">Login Partner</a>
+                    <a href="#" class="gradient-bg text-white px-7 py-3 rounded-full font-bold hover:opacity-90 transition shadow-lg shadow-green-200">
+                        Daftar Sekarang
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <div class="md:hidden">
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-700 hover:text-xmPrimary">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">Beranda</a>
+                <div class="px-3 py-3 text-base font-medium text-gray-700">Program Partner ▾</div>
+                <a href="#" class="block pl-6 pr-3 py-2 text-sm text-gray-600">Affiliate Program</a>
+                <a href="#" class="block pl-6 pr-3 py-2 text-sm text-gray-600">Introducing Broker</a>
+                <a href="#" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">Promosi</a>
+                <div class="pt-4 flex flex-col gap-3 px-3">
+                    <a href="#" class="text-center text-xmPrimary font-bold border-2 border-xmPrimary rounded-lg py-3">Login Partner</a>
+                    <a href="#" class="text-center gradient-bg text-white font-bold rounded-lg py-3">Daftar Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ANNOUNCEMENT BAR (seperti contoh asli) -->
+    <div class="mt-20 bg-xmNavy text-white text-center py-3 px-4 text-sm font-semibold tracking-wide">
+        Worldwide Partner Ladder Promo | 20 Juli – 31 Agustus 2026
+    </div>
+
+    <!-- ============================================
+         HERO SECTION - HITAM PEKAT (sesuai contoh)
+         ============================================ -->
+    <section class="relative pt-16 pb-20 lg:pt-24 lg:pb-32 bg-xmBlack overflow-hidden">
+        
+        <!-- Efek spotlight biru seperti contoh -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/3 left-1/2 w-72 h-72 bg-blue-700/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="space-y-8 text-white">
+                    <div class="text-xmPrimary font-bold uppercase tracking-widest text-sm">Beat Your Best</div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+                        Bawa pendapatan Anda ke level berikutnya
+                    </h1>
+                    <p class="text-lg text-gray-300 max-w-lg leading-relaxed">
+                        Sekarang adalah waktu yang tepat untuk bermitra dengan XM. Selama Worldwide Partner Ladder Promo, partner XM mendapatkan 
+                        <span class="text-xmPrimary font-bold">komisi tanpa batas ditambah kesempatan meraih hingga $40,000 dalam bentuk rewards</span>.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="bg-xmPrimary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-xmSecondary transition shadow-2xl text-center">
+                            Buka akun partner
+                        </a>
+                        <a href="#" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition text-center">
+                            Login sekarang
+                        </a>
+                    </div>
+                    <p class="text-xs text-gray-500">*Syarat dan ketentuan berlaku. Lihat T&C kami <a href="#" class="underline text-gray-400 hover:text-white">di sini</a>.</p>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative lg:block">
+                    <!-- ========================================
+                         GANTI GAMBAR HERO DI SINI
+                         Upload ke: /images/hero-partner.jpg
+                         ======================================== -->
+                    <img 
+                        src="./images/hero-partner.jpg" 
+                        alt="XM Partner Program" 
+                        class="relative rounded-2xl shadow-2xl w-full object-cover"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="space-y-2">
+                    <div class="text-5xl font-extrabold text-xmPrimary">250K+</div>
+                    <div class="text-gray-600 font-medium">Partner memilih XM</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-5xl font-extrabold text-xmPrimary">$2B+</div>
+                    <div class="text-gray-600 font-medium">Dibayarkan dalam komisi</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-5xl font-extrabold text-xmPrimary">190+</div>
+                    <div class="text-gray-600 font-medium">Negara aktif</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY PARTNER SECTION -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-xmDark mb-4">Mengapa bermitra dengan XM?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Program partner terbaik dengan berbagai keuntungan eksklusif</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-xmPrimary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Komisi Kompetitif</h3>
+                    <p class="text-gray-600 leading-relaxed">Raih hingga $90 revenue share dari spread, $1.000 CPA, dan $210 CPL.</p>
+                </div>
+
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Komisi Sub-Afiliasi</h3>
+                    <p class="text-gray-600 leading-relaxed">Raih hingga 10% dari penghasilan sub-afiliasi untuk memperbesar pendapatan Anda.</p>
+                </div>
+
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Pembayaran Harian</h3>
+                    <p class="text-gray-600 leading-relaxed">Dibayar setiap hari tanpa penundaan dan nikmati penarikan cepat kapan saja.</p>
+                </div>
+
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Program Rewards Partner</h3>
+                    <p class="text-gray-600 leading-relaxed">Tingkatkan kesuksesan Anda dengan reward tunai tanpa batas dan raih lebih banyak.</p>
+                </div>
+
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Dukungan Marketing</h3>
+                    <p class="text-gray-600 leading-relaxed">Tingkatkan konversi dengan landing page dan banner optimal dalam 25 bahasa.</p>
+                </div>
+
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Promosi Partner</h3>
+                    <p class="text-gray-600 leading-relaxed">Ikuti promosi global dan regional untuk kesempatan memenangkan hadiah menarik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMO SECTION -->
+    <section class="py-20 bg-xmBlack relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6 text-white">
+                    <div class="inline-block bg-xmAccent text-xmBlack px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide">
+                        Promo Terbatas
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold">Worldwide Partner Ladder Promo: Beat Your Best</h2>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Kamis, 2 Juli hingga Senin, 31 Agustus 2026
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Raih lebih dari sekadar komisi selama Promo Partner Ladder Global. Setiap klien aktif baru yang Anda bawa bisa membantu Anda naik level reward dan membuka ribuan hadiah di atas komisi tanpa batas Anda.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Setiap partner yang membuka level reward akan mendapatkan hadiahnya. Semakin tinggi Anda naik, semakin banyak yang bisa Anda raih.
+                    </p>
+                    <a href="#" class="inline-block bg-xmPrimary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-xmSecondary transition shadow-2xl mt-4">
+                        Daftar Sekarang
+                    </a>
+                </div>
+
+                <div class="relative">
+                    <!-- ========================================
+                         GANTI GAMBAR PROMO DI SINI
+                         Upload ke: /images/promo-banner.jpg
+                         ======================================== -->
+                    <img 
+                        src="./images/promo-banner.jpg" 
+                        alt="Partner Ladder Promo" 
+                        class="relative rounded-2xl shadow-2xl w-full object-cover border-4 border-white/10"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY TRADERS CHOOSE XM -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-xmDark mb-4">Mengapa lebih dari 20 juta trader memilih XM</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">XM memiliki salah satu tingkat konversi tercepat di industri karena alasan yang jelas.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-xmPrimary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Regulasi dan Keamanan</h3>
+                    <p class="text-gray-600 leading-relaxed">Broker multi-regulasi dengan beberapa lisensi dan langkah keamanan ketat.</p>
+                </div>
+
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Kondisi Trading Unggul</h3>
+                    <p class="text-gray-600 leading-relaxed">Eksekusi cepat, tanpa penolakan atau requote, spread rendah, dan lainnya.</p>
+                </div>
+
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Copy Trading & Kompetisi</h3>
+                    <p class="text-gray-600 leading-relaxed">Lebih banyak reward, keseruan, dan konversi dengan dua produk paling sukses kami.</p>
+                </div>
+
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Lebih Banyak Cara untuk Raih</h3>
+                    <p class="text-gray-600 leading-relaxed">Bonus sepanjang tahun, reward loyalitas, program referal teman, dan lainnya.</p>
+                </div>
+
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Tools Powerful</h3>
+                    <p class="text-gray-600 leading-relaxed">Chart canggih, XM AI, notifikasi personal, dan lainnya untuk membantu trader sukses.</p>
+                </div>
+
+                <div class="feature-card bg-gray-50 p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-xmDark">Pengalaman Pemenang Award</h3>
+                    <p class="text-gray-600 leading-relaxed">Penarikan instan, akun ultra-rendah, support 24/7, dan banyak lagi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         JOIN STEPS - DARK NAVY (sesuai permintaan)
+         ============================================ -->
+    <section class="py-20 bg-xmNavy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 text-white">
+                <h2 class="text-4xl font-extrabold mb-4">Bergabunglah dengan XM sebagai partner hari ini</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">Anda hanya beberapa langkah sederhana dari mulai meraih penghasilan.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 text-white text-center">
+                    <div class="text-6xl font-extrabold mb-4 text-xmPrimary">01</div>
+                    <h3 class="text-xl font-bold mb-3">Daftar</h3>
+                    <p class="text-gray-300 leading-relaxed">Daftar ke salah satu program afiliasi paling menguntungkan di dunia.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 text-white text-center">
+                    <div class="text-6xl font-extrabold mb-4 text-xmPrimary">02</div>
+                    <h3 class="text-xl font-bold mb-3">Promosikan</h3>
+                    <p class="text-gray-300 leading-relaxed">Gunakan materi marketing kami untuk mulai mereferensikan klien kepada kami.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 text-white text-center">
+                    <div class="text-6xl font-extrabold mb-4 text-xmPrimary">03</div>
+                    <h3 class="text-xl font-bold mb-3">Raih Penghasilan</h3>
+                    <p class="text-gray-300 leading-relaxed">Dapatkan hingga $90 revenue share dari spread, $1.000 CPA, dan $210 CPL.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-white text-xmNavy px-10 py-5 rounded-lg font-bold text-xl hover:bg-gray-100 transition shadow-2xl">
+                    Mulai Bermitra Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-xmBlack text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-white font-extrabold text-2xl mb-4">XM PARTNER</h3>
+                    <p class="text-sm leading-relaxed max-w-md">
+                        Program partner terbaik dengan komisi kompetitif, pembayaran harian, dan dukungan marketing profesional untuk kesuksesan Anda.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Program</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-xmPrimary transition">Affiliate Program</a></li>
+                        <li><a href="#" class="hover:text-xmPrimary transition">Introducing Broker</a></li>
+                        <li><a href="#" class="hover:text-xmPrimary transition">Partners Rewards</a></li>
+                        <li><a href="#" class="hover:text-xmPrimary transition">Promosi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Support</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-xmPrimary transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-xmPrimary transition">Hubungi Kami</a></li>
+                        <li><a href="#" class="hover:text-xmPrimary transition">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-xmPrimary transition">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-xs text-center">
+                <p>&copy; 2026 XM Partner Program. All rights reserved.</p>
+                <p class="mt-3 text-yellow-600/80 max-w-4xl mx-auto">
+                    Peringatan Risiko: Trading forex dan CFD melibatkan risiko tinggi dan mungkin tidak cocok untuk semua investor. Pastikan Anda memahami risiko yang terlibat.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
