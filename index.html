@@ -84,6 +84,8 @@
         .faq-icon {
             transition: transform 0.2s ease;
         }
+
+        #rating-carousel::-webkit-scrollbar { display: none; }
     </style>
 
     <!-- Schema: Organization -->
@@ -303,6 +305,66 @@
                 <div class="space-y-2">
                     <div class="text-5xl font-extrabold text-xmPrimary">190+</div>
                     <div class="text-gray-600 font-medium">Negara terjangkau</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RATING DARI SUMBER TERPERCAYA -->
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+                <div>
+                    <h2 class="text-4xl font-extrabold text-xmDark mb-4 leading-tight">Rating XM dari Sumber Terpercaya Global</h2>
+                    <p class="text-gray-600 text-lg mb-8 max-w-md leading-relaxed">Lihat reputasi dan kualitas layanan kami melalui penilaian lembaga independen dan jutaan pengguna di seluruh dunia.</p>
+                    <a href="https://affs.click/lTFaV" class="inline-block bg-xmDark text-white px-8 py-4 rounded-lg font-bold hover:opacity-90 transition">
+                        Buka Akun
+                    </a>
+                    <p class="text-xs text-gray-500 mt-6 max-w-md leading-relaxed">
+                        Peringatan risiko: Layanan kami melibatkan risiko yang signifikan dan dapat menyebabkan hilangnya dana yang diinvestasikan. Syarat dan ketentuan berlaku.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <div id="rating-carousel" class="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2" style="scrollbar-width:none;-ms-overflow-style:none;">
+                        <div class="flex-shrink-0 w-72 snap-start bg-xmNavy rounded-2xl p-7 text-white">
+                            <h3 class="text-xl font-bold mb-2">DailyForex</h3>
+                            <div class="text-xmAccent text-lg mb-2">★★★★★</div>
+                            <p class="font-semibold mb-4">Rata-rata 4,5/5</p>
+                            <p class="text-gray-300 text-sm mb-8">5/5 untuk biaya dan penarikan</p>
+                            <a href="#" class="text-sm font-bold inline-flex items-center gap-1 hover:text-xmPrimary transition">Pelajari Lebih Lanjut <span>↗</span></a>
+                        </div>
+
+                        <div class="flex-shrink-0 w-72 snap-start bg-xmNavy rounded-2xl p-7 text-white">
+                            <h3 class="text-xl font-bold mb-2">ForexBrokers.com</h3>
+                            <div class="text-xmAccent text-lg mb-2">★★★★★</div>
+                            <p class="font-semibold mb-4">Rata-rata 4,5/5</p>
+                            <p class="text-gray-300 text-sm mb-8">5/5 untuk edukasi dan analisis</p>
+                            <a href="#" class="text-sm font-bold inline-flex items-center gap-1 hover:text-xmPrimary transition">Pelajari Lebih Lanjut <span>↗</span></a>
+                        </div>
+
+                        <div class="flex-shrink-0 w-72 snap-start bg-xmNavy rounded-2xl p-7 text-white">
+                            <h3 class="text-xl font-bold mb-2">Trustpilot</h3>
+                            <div class="text-xmAccent text-lg mb-2">★★★★★</div>
+                            <p class="font-semibold mb-4">Rata-rata 4,5/5</p>
+                            <p class="text-gray-300 text-sm mb-8">Ribuan ulasan dari klien global</p>
+                            <a href="#" class="text-sm font-bold inline-flex items-center gap-1 hover:text-xmPrimary transition">Pelajari Lebih Lanjut <span>↗</span></a>
+                        </div>
+
+                        <div class="flex-shrink-0 w-72 snap-start bg-xmNavy rounded-2xl p-7 text-white">
+                            <h3 class="text-xl font-bold mb-2">Google Play</h3>
+                            <div class="text-xmAccent text-lg mb-2">★★★★★</div>
+                            <p class="font-semibold mb-4">Rata-rata 4,5/5</p>
+                            <p class="text-gray-300 text-sm mb-8">Dinilai jutaan pengguna aplikasi mobile</p>
+                            <a href="#" class="text-sm font-bold inline-flex items-center gap-1 hover:text-xmPrimary transition">Pelajari Lebih Lanjut <span>↗</span></a>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 mt-6">
+                        <button onclick="document.getElementById('rating-carousel').scrollBy({left:-300,behavior:'smooth'})" aria-label="Sebelumnya" class="w-12 h-12 rounded-lg bg-xmNavy text-white flex items-center justify-center hover:bg-xmDark transition text-xl">←</button>
+                        <button onclick="document.getElementById('rating-carousel').scrollBy({left:300,behavior:'smooth'})" aria-label="Berikutnya" class="w-12 h-12 rounded-lg bg-xmNavy text-white flex items-center justify-center hover:bg-xmDark transition text-xl">→</button>
+                    </div>
                 </div>
             </div>
         </div>
