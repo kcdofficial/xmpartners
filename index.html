@@ -14,7 +14,7 @@
     <meta property="og:locale" content="id_ID">
     <meta property="og:title" content="XM Indonesia - Trading Forex, Saham & Komoditas">
     <meta property="og:description" content="Broker global teregulasi dengan spread rendah, eksekusi cepat, dan dukungan Bahasa Indonesia 24/5. Buka akun trading Anda hari ini.">
-    <meta property="og:image" content="./images/hero-partner.jpg">
+    <meta property="og:image" content="./images/hero-partner.png">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -67,6 +67,15 @@
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 166, 81, 0.15);
+        }
+
+        /* Floating effect untuk gambar hero */
+        @keyframes floatHero {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-18px); }
+        }
+        .float-hero {
+            animation: floatHero 4s ease-in-out infinite;
         }
 
         details[open] summary .faq-icon {
@@ -268,9 +277,11 @@
 
                 <div class="relative lg:block">
                     <img
-                        src="./images/hero-partner.jpg"
+                        src="./images/hero-partner.png"
                         alt="Trading forex dan CFD bersama XM"
-                        class="relative rounded-2xl shadow-2xl w-full object-cover"
+                        class="float-hero relative w-full object-contain"
+                        loading="lazy"
+                        decoding="async"
                     >
                 </div>
             </div>
