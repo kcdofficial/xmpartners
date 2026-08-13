@@ -541,11 +541,31 @@
                 </div>
 
                 <div class="relative">
-                    <img
-                        src="./images/promo-banner.jpg"
-                        alt="Instrumen trading XM: forex, saham, komoditas"
-                        class="relative rounded-2xl shadow-2xl w-full object-cover border-4 border-white/10"
-                    >
+                    <div class="relative rounded-2xl shadow-2xl w-full aspect-[4/3] overflow-hidden border-4 border-white/10 bg-black">
+                        <video
+                            class="absolute inset-0 w-full h-full object-cover scale-125 blur-2xl brightness-75"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                            aria-hidden="true"
+                        >
+                            <source src="./images/promo-video.mp4" type="video/mp4">
+                        </video>
+                        <video
+                            class="relative w-full h-full object-contain"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                            poster="./images/promo-banner.png"
+                        >
+                            <source src="./images/promo-video.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag video.
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>
